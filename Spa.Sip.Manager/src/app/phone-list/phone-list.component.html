@@ -1,0 +1,10 @@
+<div class="bg-white p-5 mx-auto" style="max-width: 800px;">
+  <div class="row mb-3">
+    <div class="col themed-grid-col"><h3>File Name (MAC Address)</h3></div>
+  </div>
+  <div *ngFor="let phone of phones" class="row mb-2 bg-light rounded">
+    <div class="col p-2 themed-grid-col align-middle">{{phone.name}}</div>
+    <div class="col-2 p-2 themed-grid-col text-right"><a class="btn btn-primary" [routerLink]="['/configuration', phone.name]">View</a></div>
+    <div class="col-2 p-2 themed-grid-col text-right"><a class="btn btn-primary" [routerLink]="['/reprovision', getMacAddress(phone.name)]">Edit</a></div>
+  </div>
+</div>

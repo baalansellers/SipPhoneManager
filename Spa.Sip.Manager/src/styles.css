@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #F8F8F8;
+}
+
+div img.nav-logo {
+    padding-bottom: 8px;
+    margin-right: 20px;
+}
+
+div h5 {
+    color: #1D3756;
+}
+
+a:not([href]):not([tabindex]).btn-outline-primary {
+    color: #6EBE4F;
+    border-color: #6EBE4F;
+}
+
+a:not([href]):not([tabindex]).btn-outline-primary:hover {
+    color: #fff;
+    background-color: #6EBE4F;
+    border-color: #6EBE4F;
+}
+
+.text-dark,
+.text-dark:hover,
+.text-dark:focus {
+    color: #1D3756 !important;
+}
+
+.bg-dark {
+    background-color: #1D3756 !important;
+}
+
+.bg-secondary {
+    background-color: #1D3756 !important;
+}
+
+.btn-outline-primary {
+    color: #6EBE4F;
+    border-color: #6EBE4F;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #6EBE4F;
+    border-color: #6EBE4F;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #6EBE4F;
+    border-color: #6EBE4F;
+}
+
+.btn-primary:hover {
+    color: #6EBE4F;
+    background-color: #FFF;
+    border-color: #6EBE4F;
+}
+
+.btn-primary:disabled {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.card-body p{
+    min-height: 50px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

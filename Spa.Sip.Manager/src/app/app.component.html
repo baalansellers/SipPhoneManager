@@ -1,0 +1,14 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <img class="nav-logo" src="https://baalansellers.github.io/SIP-MGR-SPA/assets/images/Rev.io-logo_RGB_SM.png" width="100px" />
+  <h5 class="my-0 mr-md-auto font-weight-normal">{{pageTitle}}</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" *ngIf="isLoggedIn()" routerLinkActive='active' routerLink="/">Home</a>
+    <a class="p-2 text-dark" *ngIf="isLoggedIn()" routerLinkActive='active' routerLink="/phones">Phones</a>
+  </nav>
+  <a class="btn btn-outline-primary" *ngIf="!isLoggedIn()" routerLinkActive='active' (click)="login()">Login</a>
+  <a class="btn btn-outline-primary" *ngIf="isLoggedIn()" routerLinkActive='active' (click)="logout()">Logout</a>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+

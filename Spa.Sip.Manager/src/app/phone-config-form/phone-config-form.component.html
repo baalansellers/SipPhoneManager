@@ -1,0 +1,63 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <div class="container">
+    <div class="card-group">
+      <div class="card mx-auto" style="max-width: 800px; min-width: 200px;">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="phoneMacAddress">MAC Address</label>
+            <input #phoneMacAddress="ngModel" 
+                  name="phoneMacAddress"
+                  [(ngModel)]="macAddress"
+                  type="text" 
+                  class="form-control" 
+                  id="phoneMacAddress" 
+                  aria-describedby="phoneMacAddressHelp" 
+                  placeholder="Scan MAC Address"
+                  (keyup)="onKey($event, f)"
+                  (blur)="onBlur(f)"
+                  ngModel>
+            <small id="phoneMacAddressHelp" class="form-text text-muted">The MAC address is on the back of the phone.</small>
+          </div>
+          <div class="form-group" *ngIf="isValidMacAddress">
+            <label for="name">Employee Name</label>
+            <input #name="ngModel" 
+                   name="name" 
+                   [(ngModel)]="userName"
+                   type="text" 
+                   class="form-control" 
+                   id="name" 
+                   placeholder="John Doe" 
+                   ngModel>
+          </div>
+          <div class="form-group" *ngIf="isValidMacAddress">
+            <label for="extension">Extension</label>
+            <input #extension="ngModel" 
+                   name="extension" 
+                   [(ngModel)]="userExtension"
+                   type="number" 
+                   class="form-control" 
+                   id="extension" 
+                   aria-describedby="extensionHelp" 
+                   placeholder="123" 
+                   ngModel>
+            <small id="extensionHelp" class="form-text text-muted">As assigned from pbx.rev.io</small>
+          </div>
+          <div class="form-group" *ngIf="isValidMacAddress">
+            <label for="phonePassword">Extension Password</label>
+            <input #password="ngModel" 
+                   name="password" 
+                   [(ngModel)]="userPassword"
+                   type="text" 
+                   class="form-control" 
+                   id="phonePassword" 
+                   aria-describedby="phonePasswordHelp" 
+                   placeholder="S$sn#5nnks2Ts" 
+                   ngModel>
+            <small id="phonePasswordHelp" class="form-text text-muted">As set for the extension in pbx.rev.io</small>
+          </div>
+          <button class="btn btn-primary" [disabled]="!isValidMacAddress">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="./oidc-client.min.js"></script>
+    <script>
+        var config = {
+            userStore: new Oidc.WebStorageStateStore({store: window.localStorage}),
+            response_mode:"query"
+        };
+
+        var oidcMgr = new Oidc.UserManager(config);
+
+        oidcMgr.signinRedirectCallback().then( () => {
+            window.history.replaceState({},
+                window.document.title,
+                window.location.origin
+            );
+            //window.location = "/";
+            window.location = "https://baalansellers.github.io/SIP-MGR-SPA/";
+        }, error => {
+            console.error(error);
+        });
+        // new Oidc.UserManager({response_mode:"query"}).signinRedirectCallback().then(function() {
+        //     window.location = "/";
+        // }).catch(function(e) {
+        //     console.error(e);
+        // });
+    </script>
+</body>
+</html>
